@@ -92,8 +92,8 @@ if ($action == "register") {
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com'; // Replace with your SMTP server
         $mail->SMTPAuth = true;
-        $mail->Username = 'chakrabortysmit0012@gmail.com'; // Replace with your email
-        $mail->Password = 'juvkkvnztsuntzht';   // Use App Password if using Gmail
+        $mail->Username = 'example@gmail.com'; // Replace with your email
+        $mail->Password = '';   // Use App Password if using Gmail
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
 
