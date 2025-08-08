@@ -1,0 +1,266 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 20px;
+  min-height: 100vh;
+
+  background: url('../../assets/images/admin.jpg') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: 'Segoe UI', sans-serif;
+  color: #ffffffd9;
+}
+
+h2 {
+  color: #f6d365;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 15px;
+  color: #ffffffaa;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* 🔍 Search Bar Styling */
+input[type="text"] {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background-color: rgba(255,255,255,0.1);
+  color: #fff;
+  font-size: 14px;
+  border-bottom: 2px solid #ffffff6c;
+  margin-right: 8px;
+  width: 220px;
+}
+
+.search-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 14px;
+  border-bottom: 2px solid #ffffff6c;
+  width: 240px;
+}
+
+.search-bar input::placeholder {
+  color: #ffffff96;
+}
+
+.search-bar button {
+  background-color: #f6d365;
+  color: #111;
+  font-weight: bold;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+  background-color: #fda085;
+}
+
+
+input[type="text"]::placeholder {
+  color: #ffffff96;
+}
+
+.user-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-start;
+}
+
+
+button {
+  background-color: #f6d365;
+  color: #111;
+  font-weight: bold;
+  padding: 8px 14px;
+  margin: 6px 6px 16px 0;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #fda085;
+}
+
+/* 📋 Table Styles */
+table {
+  width: 100%;
+  max-width: 1100px;
+  border-collapse: collapse;
+  background-color: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  margin-top: 10px;
+  margin-bottom: 40px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+}
+
+th, td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #ffffff2c;
+  color: #f0f0f0;
+  font-size: 14px;
+}
+
+th {
+  background-color: rgba(255,255,255,0.1);
+  color: #fff59d;
+  text-align: left;
+  font-weight: 600;
+}
+
+tr:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+td button {
+  margin: 0 4px;
+  padding: 6px 10px;
+  font-size: 13px;
+}
+
+/* 📝 Edit User Modal */
+.edit-user-card {
+  background-color: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  max-width: 600px;
+  width: 100%;
+  color: #f0f0f0;
+  animation: fadeInUp 0.4s ease;
+  margin-bottom: 40px;
+}
+
+.edit-user-card h3 {
+  color: #fff59d;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.edit-user-card label {
+  display: block;
+  margin-top: 14px;
+  margin-bottom: 4px;
+  color: #f6d365;
+  font-size: 14px;
+}
+
+.edit-user-card input,
+.edit-user-card textarea {
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: none;
+  border-bottom: 2px solid #ffffff9c;
+  color: #fff;
+  font-size: 15px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.edit-user-card input:focus,
+.edit-user-card textarea:focus {
+  border-bottom-color: #f6d365;
+  outline: none;
+}
+
+.edit-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.edit-actions button {
+  background-color: #f6d365;
+  color: #111;
+  padding: 10px 16px;
+  border: none;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.edit-actions button:hover {
+  background-color: #fda085;
+}
+
+.update-toast {
+  background-color: rgba(102, 187, 106, 0.85); /* Green tone */
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 6px;
+  margin-top: 20px;
+  text-align: center;
+  font-weight: 600;
+  animation: fadeIn 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+
+
+/* 💫 Fade Up Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 📱 Responsive Table Scroll */
+@media (max-width: 768px) {
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  input[type="text"] {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  button {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  div[ng-reflect-ng-if] {
+    padding: 20px;
+  }
+}

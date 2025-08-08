@@ -1,0 +1,39 @@
+<h2>Debate Moderation</h2>
+
+<div class="debate-toolbar">
+  <input type="text" [(ngModel)]="searchQuery" placeholder="Search debates..." />
+  <button (click)="searchDebates()">🔎 Search</button>
+  <button (click)="refreshDebates()">🔄 Refresh</button>
+  <button (click)="goBack()">⬅ Back</button>
+  <button (click)="logout()">🚪 Logout</button>
+</div>
+
+
+<!-- ✅ Debates Table -->
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Category</th>
+      <th>Type</th>
+      <th>Deadline</th>
+      <th>State</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let debate of filteredDebates">
+      <td>{{ debate.title }}</td>
+      <td>{{ debate.category }}</td>
+      <td>{{ debate.debate_type }}</td>
+      <td>
+        <span *ngIf="editingDebate !== debate.id">{{ debate.deadline || 'No Deadline' }}</span>
+        <input type="datetime-local" [(ngModel)]="debate.deadline" *ngIf="editingDebate === debate.id" />
+      </td>
+      <td>{{ debate.state }}</td>
+      <td>
+        <button (click)="toggleLockDebate(debate)">🔒 {{ debate.is_locked ? 'Unlock' : 'Lock' }}</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

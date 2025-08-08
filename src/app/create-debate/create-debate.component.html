@@ -1,0 +1,36 @@
+<h2>Create a Debate</h2>
+
+<form class="debate-form" (submit)="submitDebate()">
+  <div class="form-field">
+    <input type="text" [(ngModel)]="debate.title" name="title" placeholder="Debate Title" required />
+  </div>
+
+  <div class="form-field">
+    <textarea [(ngModel)]="debate.description" name="description" placeholder="Description" required></textarea>
+  </div>
+
+  <div class="form-field">
+    <input type="text" [(ngModel)]="debate.category" name="category" placeholder="Category" required />
+  </div>
+
+  <div class="form-field">
+    <select [(ngModel)]="debate.debate_type" name="debate_type" required>
+      <option value="" disabled selected>Select Debate Type</option>
+      <option value="Public">Public</option>
+      <option value="Private">Private</option>
+    </select>
+  </div>
+
+  <label>Set Deadline</label>
+  <div class="form-field">
+    <input type="datetime-local" [(ngModel)]="debate.deadline" name="deadline" required />
+  </div>
+
+  <div class="button-row">
+    <button type="submit">✅ Create Debate</button>
+    <button type="button" (click)="goBack()">⬅ Back</button>
+    <button type="button" (click)="logout()">🚪 Logout</button>
+  </div>
+</form>
+
+<p class="status-message">{{ message }}</p>

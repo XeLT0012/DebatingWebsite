@@ -1,0 +1,147 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 20px;
+  min-height: 100vh;
+
+  background: url('../../assets/images/admin.jpg') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: 'Segoe UI', sans-serif;
+  color: #ffffffda;
+}
+
+h2 {
+  color: #f6d365;
+  font-size: 30px;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Toolbar Buttons */
+.feedback-toolbar {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.feedback-toolbar button {
+  background-color: #f6d365;
+  color: #000;
+  font-weight: bold;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.feedback-toolbar button:hover {
+  background-color: #fda085;
+}
+
+/* Feedback Card Layout */
+.feedback-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 900px;
+}
+
+.feedback-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+  animation: fadeIn 0.4s ease;
+}
+
+.feedback-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.feedback-card p {
+  margin: 6px 0;
+  font-size: 14.5px;
+  color: #f0f0f0;
+}
+
+.status-tag {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+/* Status Colors */
+.status-tag.Pending {
+  background-color: #ffb74d;
+  color: #222;
+}
+
+.status-tag.Resolved {
+  background-color: #81c784;
+  color: #111;
+}
+
+/* Actions */
+.feedback-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.feedback-actions button {
+  background-color: #f6d365;
+  color: #111;
+  font-weight: bold;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 13px;
+}
+
+.feedback-actions button:hover {
+  background-color: #fda085;
+}
+
+.resolved-label {
+  color: #a5ffb0;
+  font-weight: bold;
+  font-size: 14.5px;
+  align-self: center;
+}
+
+/* Empty State */
+.no-feedback {
+  color: #ffffffaa;
+  font-size: 16px;
+  margin-top: 20px;
+  text-align: center;
+  font-style: italic;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

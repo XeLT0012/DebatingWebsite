@@ -1,0 +1,30 @@
+<h2>Submit Feedback</h2>
+
+<div class="feedback-card">
+  <form #feedbackForm="ngForm" (ngSubmit)="submitFeedback(feedback)">
+    <input
+      type="text"
+      id="subject"
+      [(ngModel)]="feedback.subject"
+      name="subject"
+      placeholder="Subject"
+      required
+    />
+
+    <textarea
+      id="description"
+      [(ngModel)]="feedback.description"
+      name="description"
+      placeholder="Enter your feedback..."
+      required
+    ></textarea>
+
+    <div class="form-actions">
+      <button type="submit">📩 Submit Feedback</button>
+      <button type="button" (click)="goBack()">⬅ Back</button>
+      <button type="button" (click)="logout()">🚪 Logout</button>
+    </div>
+  </form>
+
+  <p class="feedback-message" *ngIf="message">{{ message }}</p>
+</div>

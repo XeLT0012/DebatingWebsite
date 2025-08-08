@@ -1,0 +1,122 @@
+/* ===============================
+   🌆 Full-Screen Background Wrapper
+   =============================== */
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 40px 20px;
+
+  background: url('../../assets/images/Log.jpg') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* ===============================
+   🧊 Translucent Glass Form Container
+   =============================== */
+div {
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  padding: 30px;
+  max-width: 480px;
+  width: 100%;
+  color: #000; /* ensures black text */
+  margin-left: 20px;
+}
+
+/* ===============================
+   ✍️ Typography
+   =============================== */
+h2 {
+  text-align: center;
+  margin-bottom: 24px;
+  color: #f6d365; /* matches your gradient palette */
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #ffffffaf;
+  opacity: 1;
+}
+
+
+/* ===============================
+   ✏️ Inputs & Text Styling
+   =============================== */
+input[type="text"],
+input[type="password"] {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-bottom: 2px solid #000;
+  padding: 10px 6px;
+  margin-bottom: 16px;
+  width: 100%;
+  font-size: 15px;
+  color: #f6d365;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  border-bottom-color: #f6d365;
+}
+
+/* ===============================
+   🎯 Button Styling
+   =============================== */
+button {
+  background-color: #f6d365;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  padding: 12px;
+  width: 100%;
+  margin-top: 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #fda085;
+}
+
+/* Forgot Password & Register Buttons — refine if needed */
+button + button {
+  margin-top: 8px;
+}
+
+/* ===============================
+   💬 Status Message
+   =============================== */
+p {
+  text-align: center;
+  margin-top: 16px;
+  font-size: 15px;
+  color: #000;
+}
+
+/* ===============================
+   📱 Responsive Styling
+   =============================== */
+@media (max-width: 600px) {
+  div {
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  input,
+  button {
+    font-size: 14px;
+  }
+}

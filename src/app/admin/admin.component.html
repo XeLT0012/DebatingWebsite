@@ -1,0 +1,56 @@
+<h2>Admin Dashboard</h2>
+<p class="welcome">Welcome, Admin! Here you can manage users and content.</p>
+
+<div class="dashboard-container">
+  <!-- 📊 User Activity -->
+  <div class="dashboard-card">
+    <h3>📊 User Activity & Engagement</h3>
+    <p>Total Registered Users: <strong>{{ totalUsers }}</strong></p>
+    <p>New Signups This Week: <strong>{{ newUsers }}</strong></p>
+    <p>Most Active Users:</p>
+    <ul>
+      <li *ngFor="let user of topActiveUsers">👤 {{ user }}</li>
+    </ul>
+  </div>
+
+  <!-- 🔥 Debate Analytics -->
+  <div class="dashboard-card">
+    <h3>🔥 Debate Performance</h3>
+    <p>Total Debates Created: <strong>{{ totalDebates }}</strong></p>
+    <p>Trending Topics:</p>
+    <ul>
+      <li *ngFor="let topic of popularTopics">💬 {{ topic }}</li>
+    </ul>
+    <p>Top Contributors:</p>
+    <ul>
+      <li *ngFor="let contributor of topContributors">🏅 {{ contributor }}</li>
+    </ul>
+  </div>
+
+  <!-- 🗳️ Voting & Arguments -->
+  <div class="dashboard-card">
+    <h3>🗳️ Voting & Arguments</h3>
+    <p>Total Votes Cast: <strong>{{ totalVotes }}</strong></p>
+    <p>Most Supported Debates:</p>
+    <ul>
+      <li *ngFor="let debate of popularDebates">🟢 {{ debate }}</li>
+    </ul>
+    <p>Total Arguments Submitted: <strong>{{ totalArguments }}</strong></p>
+  </div>
+
+  <!-- 📩 Feedback -->
+  <div class="dashboard-card">
+    <h3>📩 Feedback Management</h3>
+    <p>Pending Feedback: <strong>{{ pendingFeedback }}</strong></p>
+    <p>Resolved Feedback: <strong>{{ resolvedFeedback }}</strong></p>
+  </div>
+</div>
+
+<!-- ⚙️ Action Controls -->
+<div class="admin-actions">
+  <button (click)="goToUserManagement()">👥 Manage Users</button>
+  <button (click)="debateModeration()">🛠️ Moderate Debates</button>
+  <button (click)="goToArgumentManagement()">🧠 Manage Arguments</button>
+  <button (click)="adminFeedback()">📮 View Feedback</button>
+  <button (click)="logout()">🚪 Logout</button>
+</div>

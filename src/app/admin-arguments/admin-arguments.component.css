@@ -1,0 +1,124 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 20px;
+  min-height: 100vh;
+
+  background: url('../../assets/images/admin.jpg') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: 'Segoe UI', sans-serif;
+  color: #ffffffd9;
+}
+
+h2 {
+  color: #f6d365;
+  font-size: 30px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 15px;
+  margin-bottom: 30px;
+  color: #ffffffa6;
+  text-align: center;
+}
+
+/* Toolbar */
+.arg-toolbar {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.arg-toolbar button {
+  background-color: #f6d365;
+  color: #111;
+  font-weight: bold;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.arg-toolbar button:hover {
+  background-color: #fda085;
+}
+
+/* Argument Cards */
+.argument-list {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.argument-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(14px);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+  animation: fadeInUp 0.4s ease;
+}
+
+.argument-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 15px;
+  color: #fefefe;
+}
+
+.argument-card p {
+  font-size: 14.5px;
+  margin: 6px 0;
+  color: #eaeaea;
+}
+
+.argument-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 14px;
+  gap: 10px;
+}
+
+.argument-actions button {
+  background-color: #f6d365;
+  color: #111;
+  font-weight: bold;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.argument-actions button:hover {
+  background-color: #fda085;
+}
+
+.archived-tag {
+  color: #a5ffb0;
+  font-weight: bold;
+  font-size: 14.5px;
+  align-self: center;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

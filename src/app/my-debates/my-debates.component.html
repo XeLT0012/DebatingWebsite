@@ -1,0 +1,27 @@
+<h2>My Debates</h2>
+
+<div class="search-bar">
+  <input type="text" [(ngModel)]="searchQuery" placeholder="Search my debates..." />
+  <button (click)="fetchMyDebates()">🔍 Search</button>
+  <button (click)="refreshMyDebates()">🔄 Refresh</button>
+  <button (click)="goBack()">⬅ Back</button>
+  <button (click)="logout()">🚪 Logout</button>
+</div>
+
+<ul>
+  <li *ngFor="let debate of myDebates">
+    <h3>{{ debate.title }}</h3>
+    <p>Description: {{ debate.description }}</p>
+    <p>Category: {{ debate.category }}</p>
+    <p>Votes Received: 🟩 {{ debate.votes_for }} | 🟥 {{ debate.votes_against }}</p>
+    <p>Arguments Posted: {{ debate.argument_count }}</p>
+
+    <div class="debate-actions">
+      <button *ngIf="!debate.is_locked && debate.state === 'Ongoing'" (click)="redirectToDebate(debate.id, debate.is_locked)">🔎 Open Debate</button>
+      <button *ngIf="!debate.is_locked && debate.state === 'Finished'" (click)="redirectToDebate(debate.id, debate.is_locked)">🏆 View Results</button>
+      <p *ngIf="debate.is_locked" class="locked-warning">🚫 This debate has been locked by an admin.</p>
+    </div>
+  </li>
+</ul>
+
+<p *ngIf="myDebates.length === 0">No debates found.</p>

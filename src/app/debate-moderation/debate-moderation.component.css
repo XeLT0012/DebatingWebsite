@@ -1,0 +1,138 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 20px;
+  min-height: 100vh;
+
+  background: url('../../assets/images/admin.jpg') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: 'Segoe UI', sans-serif;
+  color: #ffffffd9;
+}
+
+h2 {
+  color: #f6d365;
+  font-size: 30px;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* 🔍 Search & Control Bar */
+.debate-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.debate-toolbar input[type="text"] {
+  padding: 10px;
+  width: 220px;
+  border: none;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffffd9;
+  font-size: 14px;
+  border-bottom: 2px solid #ffffff96;
+}
+
+.debate-toolbar input::placeholder {
+  color: #ffffffa2;
+}
+
+.debate-toolbar button {
+  background-color: #f6d365;
+  color: #111;
+  font-weight: bold;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.debate-toolbar button:hover {
+  background-color: #fda085;
+}
+
+/* 🧊 Table */
+table {
+  width: 100%;
+  max-width: 1100px;
+  border-collapse: collapse;
+  background-color: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+th, td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #ffffff30;
+  font-size: 14.5px;
+  color: #fefefe;
+  text-align: left;
+}
+
+th {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff59d;
+  font-weight: 600;
+}
+
+tr:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+/* 👇 Inline Deadline Editor */
+input[type="datetime-local"] {
+  padding: 8px;
+  background-color: rgba(255, 255, 255, 0.12);
+  border: none;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 6px;
+  width: 180px;
+}
+
+/* 🎯 Action Buttons */
+td button {
+  background-color: #f6d365;
+  color: #111;
+  font-weight: bold;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 5px;
+  margin: 2px 4px;
+  cursor: pointer;
+  font-size: 13px;
+  min-width: 80px;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+}
+
+td button:hover {
+  background-color: #fda085;
+}
+
+/* 🪄 Responsive */
+@media (max-width: 768px) {
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .debate-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .debate-toolbar input,
+  .debate-toolbar button {
+    width: 100%;
+  }
+}

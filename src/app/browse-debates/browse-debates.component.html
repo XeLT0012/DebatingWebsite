@@ -1,0 +1,35 @@
+<h2>Browse Debates</h2>
+
+<div class="search-bar">
+  <input type="text" [(ngModel)]="searchQuery" placeholder="Search debates..." />
+  <button (click)="fetchDebates()">🔍 Search</button>
+  <button (click)="refreshDebates()">🔄 Refresh</button>
+  <button (click)="goBack()">⬅ Back</button>
+  <button (click)="logout()">🚪 Logout</button>
+</div>
+
+<ul class="debate-list">
+  <li class="debate-card" *ngFor="let debate of debates">
+    <div class="debate-header">
+      <h3>{{ debate.title }}</h3>
+      <span class="badge" [class.ongoing]="debate.state === 'Ongoing'" [class.finished]="debate.state === 'Finished'">
+        {{ debate.state }}
+      </span>
+    </div>
+    <p>{{ debate.description }}</p>
+    <div class="debate-meta">
+      <p><strong>Category:</strong> {{ debate.category }}</p>
+      <p><strong>Type:</strong> {{ debate.debate_type }}</p>
+      <p><strong>Deadline:</strong> {{ debate.deadline }}</p>
+      <p><strong>Created by: {{ debate.username }}</strong></p>
+    </div>
+
+    <div class="debate-actions">
+      <button *ngIf="!debate.is_locked && debate.state === 'Ongoing'" (click)="redirectToDebate(debate.id, debate.is_locked)">🔎 Open Debate</button>
+      <button *ngIf="!debate.is_locked && debate.state === 'Finished'" (click)="redirectToDebate(debate.id, debate.is_locked)">🏆 View Results</button>
+      <p *ngIf="debate.is_locked" class="locked-warning">🚫 This debate has been locked by an admin.</p>
+    </div>
+  </li>
+</ul>
+
+<p class="no-results" *ngIf="debates.length === 0">No debates found.</p>

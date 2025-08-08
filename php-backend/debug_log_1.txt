@@ -1,0 +1,13 @@
+Received Data: {"username":"gola","email":"gola@gmail.com","password":"gola123","fullName":"gola","bio":"dfgdfgdfgdd","dateOfBirth":"2025-06-13","location":"bangalore"}
+Received Data: {"username":"zzz","email":"chkrbrtysumit0012@gmail.com","password":"zzz@123","fullName":"zzz","bio":"zzz","dateOfBirth":"2025-06-05","location":"zzz"}
+Received Data: {"username":"ccc","email":"ccc@gmail.com","password":"cccccc","fullName":"ccc","bio":"ccc","dateOfBirth":"2025-06-03","location":"ccc"}
+Received Data: {"username":"ccc","email":"ccc@gmail.com","password":"cccccc","fullName":"ccc","bio":"ccc","dateOfBirth":"2025-06-04","location":"ccc"}
+Received Data: {"username":"ccc","email":"ccc@gmail.com","password":"cccccc","fullName":"ccc","bio":"ccc","dateOfBirth":"2025-06-07","location":"ccc"}
+Received Data: {"username":"ccc","email":"ccc@gmail.com","password":"cccccc","fullName":"ccc","bio":"ccc","dateOfBirth":"2025-06-05","location":"ccc"}
+Received Data: {"username":"ccc","email":"ccc@gmail.com","password":"cccccc","fullName":"ccc","bio":"ccc","dateOfBirth":"2025-06-09","location":"ccc"}
+Received Data: {"username":"aaa","email":"aaa@gmail.com","password":"aaaaaa","fullName":"aaa","bio":"aaa","dateOfBirth":"2025-06-14","location":"aaa"}
+Received Data: {"username":"sumit","email":"chkrbrtysumit0012@gmail.com","password":"sumit123","fullName":"Sumit Chakraborty","bio":"Hello World","dateOfBirth":"2002-03-29","location":"Bangalore"}
+Received Data: {"username":"demo","email":"demo@gmail.com","password":"demo123","fullName":"Demo details","bio":"Demo demo demo","dateOfBirth":"2025-06-01","location":"Demo"}
+Received Data: {"username":"abhay","email":"abhay@gmail.com","password":"abhay123","fullName":"Abhay","bio":"Hi everyone","dateOfBirth":"2002-01-01","location":"Bangalore"}
+Received Data: {"username":"vishal","email":"vishal@gmail.com","password":"vishal123","fullName":"Vishal","bio":"Hello","dateOfBirth":"2000-02-01","location":"Bangalore"}
+Received Data: {"username":"garv","email":"garv@gmail.com","password":"garv123","fullName":"Garv","bio":"Hiiiiii","dateOfBirth":"2002-10-01","location":"Patna"}

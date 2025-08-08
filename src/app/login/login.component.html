@@ -1,0 +1,19 @@
+<div>
+    <h2>LOGIN</h2>
+    <input type="text" [(ngModel)]="user.username" placeholder="Username">
+    <input type="password" [(ngModel)]="user.password" placeholder="Password">
+    <button (click)="login()">Login</button>
+    <button (click)="navigateTo('register')">Register</button>
+    <button (click)="toggleForgotPassword()">Forgot Password?</button>
+    <p>{{ message }}</p>
+  </div>
+
+  <!-- Password Change Form (Only Appears When Forgot Password is Clicked) -->
+<div *ngIf="forgotPasswordMode">
+  <h2>RESET PASSWORD</h2>
+  <input type="text" [(ngModel)]="passwordData.username" placeholder="Username">
+  <input type="password" [(ngModel)]="passwordData.current_password" placeholder="Current Password">
+  <input type="password" [(ngModel)]="passwordData.new_password" placeholder="New Password">
+  <button (click)="changePassword()">Update Password</button>
+  <button (click)="toggleForgotPassword()">Cancel</button>
+</div>

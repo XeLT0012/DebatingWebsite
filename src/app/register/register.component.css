@@ -1,0 +1,182 @@
+/* ===============================
+   🖼️ Fullscreen Black Background with Flex Layout
+   =============================== */
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 40px 20px;
+  background: url('../../assets/images/Reg.jpg') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* ===============================
+   🧊 Glass-Style Translucent Form
+   =============================== */
+form {
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  padding: 30px;
+  max-width: 500px;
+  width: 100%;
+  color: #f6d365;
+}
+
+/* ===============================
+   ✍️ Heading
+   =============================== */
+h2 {
+  text-align: center;
+  margin-bottom: 24px;
+  color: #f6d365; /* gradient highlight color */
+}
+
+::placeholder {
+  color: #ffffffaf;
+  opacity: 1; /* ensures full opacity for white */
+}
+
+label {
+  font-size: 15px;
+}
+
+/* Error messages */
+small {
+  color: red;
+  font-size: 14px;
+}
+
+
+
+/* ===============================
+   🔠 Input Styling
+   =============================== */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="file"],
+textarea {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-bottom: 2px solid #000;
+  color: #f6d365;
+  padding: 10px 6px;
+  margin-bottom: 16px;
+  width: 100%;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  border-bottom-color: #f6d365;
+}
+
+/* ===============================
+   🚀 Submit & Navigation Buttons
+   =============================== */
+button[type="submit"],
+button {
+  background-color: #f6d365;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  padding: 12px;
+  width: 100%;
+  margin-top: 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #fda085;
+}
+
+input[type="file"]::file-selector-button {
+  background-color: #f6d365;
+  color: #000;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+input[type="file"] {
+  color: #ffffffaf; /* Simulated placeholder look */
+}
+
+input[type="date"] {
+  color: #ffffffaf;
+}
+
+/* Inline login/register links */
+.inline-login {
+  text-align: center;
+  margin-top: 12px;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+}
+
+.inline-login p {
+  display: inline; /* ensures inline layout */
+  color: #ffffffaf;
+  font-size: 15px;
+  margin: 0;
+}
+
+.inline-login button {
+  all: unset; /* removes default block button styling */
+  display: inline; /* ensures inline with text */
+  color: #f6d365;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 4px;
+  text-decoration: underline;
+  font-size: 15px;
+  font-family: inherit;
+  vertical-align: baseline;
+  line-height: inherit;
+}
+
+.inline-login button:hover {
+  color: #fda085;
+}
+
+
+/* ===============================
+   💬 Status Message
+   =============================== */
+p {
+  text-align: center;
+  margin-top: 16px;
+  font-size: 15px;
+  color: #000;
+}
+
+/* ===============================
+   📱 Responsive Adjustments
+   =============================== */
+@media (max-width: 600px) {
+  form {
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  input,
+  button {
+    font-size: 14px;
+  }
+}

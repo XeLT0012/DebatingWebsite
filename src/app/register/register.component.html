@@ -1,0 +1,56 @@
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<div>
+
+    <form [formGroup]="registerForm" (submit)="register()">
+
+        <h2>REGISTER</h2>
+
+        <input type="text" id="username" formControlName="username" placeholder="Enter username">
+        <div *ngIf="formControls['username'].invalid && formControls['username'].touched">
+            <small>Username must be at least 3 characters long.</small>
+        </div>
+
+        <input type="email" id="email" formControlName="email" placeholder="Enter email">
+        <div *ngIf="formControls['email'].invalid && formControls['email'].touched">
+            <small>Enter a valid email.</small>
+        </div>
+
+        <input type="password" id="password" formControlName="password" placeholder="Enter password">
+        <div *ngIf="formControls['password'].invalid && formControls['password'].touched">
+            <small>Password must be at least 6 characters long.</small>
+        </div>
+
+        <input type="text" id="fullName" formControlName="fullName" placeholder="Enter your full name">
+        <div *ngIf="formControls['fullName'].invalid && formControls['fullName'].touched">
+            <small>Full Name is required.</small>
+        </div>
+
+        <textarea id="bio" formControlName="bio" placeholder="Enter your Bio"></textarea>
+
+        <label for="profilePicture">Profile Picture</label>
+        <input type="file" id="profilePicture" (change)="onFileSelected($event)" placeholder="Profile picture">
+
+        <label for="dateOfBirth">Date of Birth</label>
+        <input type="date" id="dateOfBirth" formControlName="dateOfBirth" placeholder="Date of Birth">
+        <div *ngIf="formControls['dateOfBirth'].invalid && formControls['dateOfBirth'].touched">
+            <small>Date of Birth is required.</small>
+        </div>
+
+        <input type="text" id="location" formControlName="location" placeholder="Enter your location">
+        <div *ngIf="formControls['location'].invalid && formControls['location'].touched">
+            <small>Location is required.</small>
+        </div>
+
+        <button type="submit" [disabled]="registerForm.invalid">Register</button>
+        <div class="inline-login">
+  <p>Already have an account? <button (click)="navigateTo('login')">Login</button></p>
+</div>
+
+
+
+    </form>
+
+    <p>{{ message }}</p>
+</div>

@@ -1,0 +1,124 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 20px;
+  min-height: 100vh;
+
+  background: url('../../assets/images/user.jpg') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+h2 {
+  color: #f6d365;
+  font-size: 30px;
+  margin-bottom: 30px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+  text-align: center;
+}
+
+.feedback-card {
+  background-color: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  padding: 30px 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  width: 100%;
+  max-width: 600px;
+  color: #ffffffd9;
+}
+
+form label {
+  display: block;
+  margin-top: 16px;
+  margin-bottom: 6px;
+  font-size: 14.5px;
+  color: #f6d365;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 12px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: none;
+  border-bottom: 2px solid #ffffffaf;
+  color: #fefefe;
+  font-size: 15px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  resize: vertical;
+}
+
+form input:focus,
+form textarea:focus {
+  border-bottom-color: #f6d365;
+  outline: none;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.form-actions button {
+  background-color: #f6d365;
+  color: #111;
+  font-weight: bold;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-actions button:hover {
+  background-color: #fda085;
+}
+
+.feedback-message {
+  margin-top: 24px;
+  color: #a5ffb0;
+  text-align: center;
+  font-weight: bold;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Placeholder color and smoothing */
+input::placeholder,
+textarea::placeholder {
+  color: #ffffffab;
+  font-style: italic;
+  letter-spacing: 0.3px;
+  font-size: 14.5px;
+}
+
+/* Optional: Make focused input slightly brighter */
+input:focus::placeholder,
+textarea:focus::placeholder {
+  color: #fffdd0;
+}
+
+
+/* Optional fade animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .feedback-card {
+    padding: 20px;
+  }
+
+  .form-actions button {
+    width: 100%;
+  }
+}

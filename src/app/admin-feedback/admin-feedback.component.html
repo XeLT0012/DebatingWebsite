@@ -1,0 +1,27 @@
+<h2>Admin Feedback Management</h2>
+
+<div class="feedback-toolbar">
+  <button (click)="goBack()">⬅ Back</button>
+  <button (click)="logout()">🚪 Logout</button>
+</div>
+
+<div *ngIf="feedbackList.length > 0; else noFeedback" class="feedback-list">
+  <div class="feedback-card" *ngFor="let feedback of feedbackList">
+    <div class="feedback-header">
+      <span>🎫 <strong>{{ feedback.subject }}</strong></span>
+      <span class="status-tag" [ngClass]="feedback.status">{{ feedback.status }}</span>
+    </div>
+
+    <p><strong>📝 Description:</strong> {{ feedback.description }}</p>
+    <p><strong>👤 Submitted by:</strong> {{ feedback.user_name }}</p>
+
+    <div class="feedback-actions">
+      <button *ngIf="feedback.status === 'Pending'" (click)="resolveFeedback(feedback.id)">✅ Mark as Resolved</button>
+      <span *ngIf="feedback.status === 'Resolved'" class="resolved-label">✅ Marked</span>
+    </div>
+  </div>
+</div>
+
+<ng-template #noFeedback>
+  <p class="no-feedback">No feedback found.</p>
+</ng-template>

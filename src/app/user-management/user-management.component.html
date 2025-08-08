@@ -1,0 +1,80 @@
+<h2>User Management</h2>
+<p>Admins can manage registered users here.</p>
+
+<!-- ✅ Search Users -->
+<div class="search-bar">
+  <input type="text" [(ngModel)]="searchQuery" placeholder="Search users..." />
+  <button (click)="searchUsers()">Search</button>
+  <button (click)="refresh()">🔄 Refresh</button>
+  <button (click)="goBack()">⬅ Back</button>
+  <button (click)="logout()">🚪 Logout</button>
+</div>
+
+<p class="update-toast" *ngIf="updateMessage">{{ updateMessage }}</p>
+
+
+<!-- ✅ User List -->
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Full Name</th>
+      <th>Bio</th>
+      <th>Date of Birth</th>
+      <th>Location</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of filteredUsers">
+      <td>{{ user.id }}</td>
+      <td>{{ user.username }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.full_name }}</td>
+      <td>{{ user.bio }}</td>
+      <td>{{ user.date_of_birth }}</td>
+      <td>{{ user.location }}</td>
+      <td>{{ user.is_blocked ? 'Blocked' : 'Active' }}</td>
+      <td>
+  <div class="user-actions">
+    <button (click)="editUser(user)">Edit</button>
+    <button (click)="toggleBlockUser(user.id, user.is_blocked)">
+      {{ user.is_blocked ? '🔓 Unblock' : '🚫 Block' }}
+    </button>
+  </div>
+</td>
+
+    </tr>
+  </tbody>
+</table>
+
+<!-- ✅ Edit User Modal -->
+<div class="edit-user-card" *ngIf="selectedUser">
+  <h3>Edit User: {{ selectedUser.username }}</h3>
+
+  <label>Username:</label>
+  <input type="text" [(ngModel)]="selectedUser.username" />
+
+  <label>Email:</label>
+  <input type="text" [(ngModel)]="selectedUser.email" />
+
+  <label>Full Name:</label>
+  <input type="text" [(ngModel)]="selectedUser.full_name" />
+
+  <label>Bio:</label>
+  <textarea [(ngModel)]="selectedUser.bio"></textarea>
+
+  <label>Date of Birth:</label>
+  <input type="date" [(ngModel)]="selectedUser.date_of_birth" />
+
+  <label>Location:</label>
+  <input type="text" [(ngModel)]="selectedUser.location" />
+
+  <div class="edit-actions">
+    <button (click)="saveUserChanges()">💾 Save</button>
+    <button (click)="cancelEdit()">❌ Cancel</button>
+  </div>
+</div>

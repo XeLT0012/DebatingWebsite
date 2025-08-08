@@ -1,0 +1,154 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  min-height: 100vh;
+
+  background: url('../../assets/images/user.jpg') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+
+  font-family: 'Segoe UI', sans-serif;
+  color: #ffffffaf;
+}
+
+h2 {
+  color: #f6d365;
+  font-size: 28px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+h3 {
+  color: #fff176;
+  font-size: 20px;
+  margin-top: 30px;
+  margin-bottom: 12px;
+}
+
+/* Vote summary */
+p {
+  font-size: 15px;
+  margin: 4px 0;
+  color: #f5f5f5;
+}
+
+strong {
+  color: #fffd92;
+}
+
+/* Voting Buttons */
+.for-btn, .against-btn {
+  padding: 10px 16px;
+  margin: 6px;
+  font-weight: bold;
+  border: 2px solid;
+  border-radius: 6px;
+  background-color: transparent;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.for-btn {
+  color: #4caf50;
+  border-color: #4caf50;
+}
+
+.against-btn {
+  color: #f44336;
+  border-color: #f44336;
+}
+
+.for-btn:hover {
+  background-color: #4caf50;
+  color: #111;
+}
+
+.against-btn:hover {
+  background-color: #f44336;
+  color: #fff;
+}
+
+/* Navigation Buttons */
+div button {
+  background-color: #f6d365;
+  color: #000;
+  font-weight: bold;
+  padding: 10px 14px;
+  margin: 6px 6px 6px 0;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+div button:hover {
+  background-color: #fda085;
+}
+
+/* Argument Form */
+textarea {
+  width: 100%;
+  max-width: 600px;
+  padding: 14px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #f6f6f6;
+  border: none;
+  border-bottom: 2px solid #ffffff9c;
+  border-radius: 6px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  resize: vertical;
+  backdrop-filter: blur(6px);
+}
+
+textarea::placeholder {
+  color: #ffffff94;
+}
+
+textarea:focus {
+  outline: none;
+  border-bottom-color: #f6d365;
+}
+
+button[ng-reflect-klass="submit-argument"] {
+  background-color: #f6d365;
+  color: #000;
+  padding: 10px 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button[ng-reflect-klass="submit-argument"]:hover {
+  background-color: #fda085;
+}
+
+/* Argument List */
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 800px;
+}
+
+li {
+  background-color: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(8px);
+  border-left: 4px solid #f6d365;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 16px;
+  color: #ffffffdd;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+
+li strong {
+  color: #fff59d;
+}

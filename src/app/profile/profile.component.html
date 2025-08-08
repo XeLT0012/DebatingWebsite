@@ -1,0 +1,71 @@
+<h2>User Profile</h2>
+
+<div class="profile-box-row">
+  <div class="profile-details">
+    <div class="detail" *ngIf="userData?.username">
+      <label>👤 Username</label>
+      <span>{{ userData.username }}</span>
+    </div>
+    <div class="detail" *ngIf="userData?.email">
+      <label>📧 Email</label>
+      <span>{{ userData.email }}</span>
+    </div>
+    <div class="detail" *ngIf="userData?.full_name">
+      <label>🪪 Full Name</label>
+      <span>{{ userData.full_name }}</span>
+    </div>
+    <div class="detail" *ngIf="userData?.bio">
+      <label>💬 Bio</label>
+      <span>{{ userData.bio }}</span>
+    </div>
+    <div class="detail" *ngIf="userData?.date_of_birth">
+      <label>🎂 Date of Birth</label>
+      <span>{{ userData.date_of_birth }}</span>
+    </div>
+    <div class="detail" *ngIf="userData?.location">
+      <label>📍 Location</label>
+      <span>{{ userData.location }}</span>
+    </div>
+  </div>
+
+  <div class="profile-image">
+    <img *ngIf="userData?.profile_picture" [src]="userData.profile_picture" alt="Profile Picture" />
+  </div>
+</div>
+
+<div class="action-buttons">
+  <button (click)="goBack()">⬅ Back</button>
+  <button (click)="logout()">🚪 Logout</button>
+  <button class="edit-toggle-btn" (click)="toggleEditMode()">✏️ Edit Profile</button>
+</div>
+
+<div class="success-toast" *ngIf="updateSuccess">
+  ✅ Profile updated successfully!
+</div>
+
+
+<form *ngIf="editMode" (ngSubmit)="updateProfile()">
+  <label>Username:</label>
+  <input [(ngModel)]="userData.username" name="username" required />
+
+  <label>Email:</label>
+  <input [(ngModel)]="userData.email" name="email" required />
+
+  <label>Full Name:</label>
+  <input [(ngModel)]="userData.full_name" name="full_name" required />
+
+  <label>Bio:</label>
+  <textarea [(ngModel)]="userData.bio" name="bio"></textarea>
+
+  <label>Date of Birth:</label>
+  <input [(ngModel)]="userData.date_of_birth" name="date_of_birth" type="date" />
+
+  <label>Location:</label>
+  <input [(ngModel)]="userData.location" name="location" />
+
+  <div class="form-action-buttons">
+  <button type="submit">💾 Save Changes</button>
+  <button type="button" (click)="toggleEditMode()">❌ Cancel</button>
+</div>
+
+</form>

@@ -1,0 +1,43 @@
+<h2>Debate Topic</h2>
+
+<h3>Votes:</h3>
+<p>For: 🟩 {{ votes.for }} | Against: 🟥 {{ votes.against }}</p>
+<p *ngIf="debate.state === 'Finished'">
+  <strong>Final Result: {{ debate.result }}</strong>
+</p>
+
+<!-- Show voting buttons only if debate is ongoing -->
+<div *ngIf="debate.state === 'Ongoing'">
+  <button (click)="voteDebate('For')" class="for-btn">👍 Vote For</button>
+  <button (click)="voteDebate('Against')" class="against-btn">👎 Vote Against</button>
+</div>
+
+<!-- Navigation -->
+<div>
+  <button *ngIf="previousPage === 'browse-debates'" (click)="router.navigate(['/debates'])">
+    ⬅ Go Back to Browse Debates
+  </button>
+
+  <button *ngIf="previousPage === 'my-debates'" (click)="router.navigate(['/my-debates'])">
+    ⬅ Go Back to My Debates
+  </button>
+
+  <button (click)="logout()">🚪 Logout</button>
+</div>
+
+<!-- Post argument only if debate is ongoing -->
+<div *ngIf="debate.state === 'Ongoing'">
+  <h3>Post Your Argument:</h3>
+  <textarea [(ngModel)]="argumentText" placeholder="Enter your argument..."></textarea>
+  <button (click)="submitArgument()">📩 Submit Argument</button>
+</div>
+
+<!-- List of non-archived arguments -->
+<h3>Arguments:</h3>
+<ul>
+  <li *ngFor="let argument of argumentsList">
+    <strong>Username:</strong> {{ argument.username }} <br>
+    <strong>Argument:</strong> {{ argument.argument }} <br>
+    <strong>Submitted At:</strong> {{ argument.created_at }} <br>
+  </li>
+</ul>

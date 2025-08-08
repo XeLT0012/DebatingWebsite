@@ -1,0 +1,40 @@
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL, -- ✅ Store hashed passwords
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    full_name VARCHAR(100) DEFAULT NULL,
+    bio TEXT DEFAULT NULL,
+    profile_picture VARCHAR(255) DEFAULT NULL,
+    date_of_birth DATE DEFAULT NULL,
+    location VARCHAR(100) DEFAULT NULL
+);
+
+CREATE TABLE debates (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    description TEXT NOT NULL,
+    created_by INT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (created_by) REFERENCES users(id) ON DELETE CASCADE
+);
+
+CREATE TABLE debate_votes (
+    debate_id INT NOT NULL,
+    user_id INT NOT NULL,
+    side ENUM('For', 'Against') NOT NULL,
+    PRIMARY KEY (debate_id, user_id),
+    FOREIGN KEY (debate_id) REFERENCES debates(id) ON DELETE CASCADE,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
+CREATE TABLE debate_arguments (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    debate_id INT NOT NULL,
+    user_id INT NOT NULL,
+    argument TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (debate_id) REFERENCES debates(id) ON DELETE CASCADE,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);

@@ -1,0 +1,123 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  min-height: 100vh;
+  background: url('../../assets/images/user.jpg') no-repeat center center;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+h2 {
+  color: #f6d365;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+label {
+    color: #f6d365;
+    margin-bottom: 24px;
+}
+
+.debate-form {
+  background-color: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 40px; /* ⬅ Equal spacing on all sides */
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 600px;
+}
+
+
+.form-field {
+  margin-bottom: 20px;
+}
+
+input,
+textarea,
+select {
+  width: 95%;
+  padding: 12px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: none;
+  border-bottom: 2px solid #ffffffaf;
+  color: #f6d365;
+  font-size: 15px;
+  outline: none;
+  border-radius: 4px;
+  margin-top: 7px;
+}
+
+input::placeholder,
+textarea::placeholder,
+select:invalid {
+  color: #ffffffaf;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-bottom-color: #f6d365;
+}
+
+select {
+  width: 99%;
+  padding: 12px;
+  background-color: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: none;
+  border-bottom: 2px solid #ffffffaf;
+  color: #f6d365;
+  border-radius: 4px;
+  appearance: none;
+  font-size: 15px;
+}
+
+
+.button-row {
+  display: flex;
+  justify-content: center; /* center horizontally */
+  align-items: center;
+  gap: 16px; /* spacing between buttons */
+  flex-wrap: wrap; /* optional: wrap on small screens */
+  margin-top: 24px;
+}
+
+
+button {
+  background-color: #f6d365;
+  color: #000;
+  font-weight: bold;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #fda085;
+}
+
+.status-message {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 14px;
+  color: red;
+}
+
+@media (max-width: 600px) {
+  .debate-form {
+    padding: 20px;
+  }
+
+  button {
+    flex: 1 1 100%;
+  }
+}
